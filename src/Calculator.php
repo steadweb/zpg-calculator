@@ -18,31 +18,51 @@ final class Calculator
      */
     public function evaluate($equation)
     {
-        $chunks = array_chunk(explode(' ', $equation), 3);
+        $parts = explode(' ', $equation);
 
         $value = 0;
+        $values = [];
+        $op = false;
 
-        foreach($chunks  as $parts) {
-            switch($parts[1]) {
-                case '+':
-                    $value = $this->add($parts[0], $parts[2]);
-                    break;
+        foreach($parts as $part) {
 
-                case '-':
-                    $value = $this->subtract($parts[0], $parts[2]);
-                    break;
+            if(is_numeric($part)) {
+                $values[] = $part;
+            } elseif(in_array($part, ['+', '-', '/', '*', '^'])) {
+                $op = $part;
+            }
 
-                case '*':
-                    $value = $this->multiply($parts[0], $parts[2]);
-                    break;
+            if(count($values) >= 2 && false !== $op) {
+                switch($op) {
+                    case '+':
+                        $value = $this->add($values[0], $values[1]);
+                        $values = [];
+                        $values[] = $value;
+                        break;
 
-                case '/':
-                    $value = $this->divide($parts[0], $parts[2]);
-                    break;
+                    case '-':
+                        $value = $this->subtract($values[0], $values[1]);
+                        $values = [];
+                        $values[] = $value;
+                        break;
 
-                case '^':
-                    $value = $this->power($parts[0], $parts[2]);
-                    break;
+                    case '*':
+                        $value = $this->multiply($values[0], $values[1]);
+                        $values[] = $value;
+                        break;
+
+                    case '/':
+                        $value = $this->divide($values[0], $values[1]);
+                        $values = [];
+                        $values[] = $value;
+                        break;
+
+                    case '^':
+                        $value = $this->power($values[0], $values[1]);
+                        $values = [];
+                        $values[] = $value;
+                        break;
+                }
             }
         }
 

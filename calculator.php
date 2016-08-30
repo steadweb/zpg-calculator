@@ -7,11 +7,15 @@ use Steadweb\Calculator\Calculator;
 $calculator = new Calculator();
 
 $equations = [
-    '4 + 1',
-    '104 - 94',
-    '11 * 3',
-    '100 / 5',
-    '4 ^ 4'
+    // Simple
+    '4 + 1 + 3 + 5', // 13
+    '4 + 1 + 3 + 5 - 10', // 3
+    '104 - 94', // 10
+    '104 - 94 + 2 - 11', // 1
+
+    '11 * 3', // 33
+    '100 / 5', // 20
+    '4 ^ 4' // 256
 ];
 
 foreach($equations as $equation) {
