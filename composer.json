@@ -1,0 +1,20 @@
+{
+    "name": "steadweb/calculator",
+    "description": "Basic calculator driven by ZeroMQ",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luke Steadman",
+            "email": "ljsteadman@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Steadweb\\Calculator\\" : ["src"]
+        }
+    },
+    "require" :{
+        "php" : ">=5.4"
+    }
+}
