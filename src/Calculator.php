@@ -58,7 +58,7 @@ final class Calculator
 
             if(is_numeric($part)) {
                 $values[] = $part;
-            } elseif(in_array($part, ['+', '-', '/', '*', '^'])) {
+            } elseif(in_array($part, ['+', '-'])) {
                 $op = $part;
             }
 
