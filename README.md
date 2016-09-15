@@ -57,3 +57,9 @@ foreach($equations as $equation) {
 ```
 
 ## Testing
+
+Run the tests using the following command from the root of the project.
+
+```
+./vendor/bin/phpunit ./tests
+```
