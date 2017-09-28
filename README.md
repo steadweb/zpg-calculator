@@ -1,6 +1,8 @@
-# Calculator
+# ZPG - Calculator
 
 Basic calculator to calculate simple and compound equations.
+
+_Note: This project was created for a developer role at ZPG._
 
 ## Simple
 
