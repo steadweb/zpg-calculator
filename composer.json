@@ -1,5 +1,5 @@
 {
-    "name": "steadweb/calculator",
+    "name": "steadweb/zpg-calculator",
     "description": "Basic calculator driven by ZeroMQ",
     "license": "MIT",
     "authors": [
